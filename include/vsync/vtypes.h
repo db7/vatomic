@@ -1,5 +1,5 @@
 /*
- * Copyright (C) Huawei Technologies Co., Ltd. 2023-2024. All rights reserved.
+ * Copyright (C) Huawei Technologies Co., Ltd. 2023-2025. All rights reserved.
  * SPDX-License-Identifier: MIT
  */
 
@@ -29,9 +29,15 @@
     #include <stdint.h>
     #include <stdbool.h>
     #include <stddef.h>
-    #if !defined(__APPLE__)
-        #include <inttypes.h>
+    #if defined(__APPLE__) && !defined(__STDC_FORMAT_MACROS)
+        // For the github's runner this is not really needed.
+        // However, there has been cases mentioned on the internet
+        // where one needs to define this for e.g. PRIuPTR
+        // is defined in `inttypes.h`.
+        // https://stackoverflow.com/questions/26182336/priuptr-preprocessor-bug-in-gcc
+        #define __STDC_FORMAT_MACROS
     #endif
+    #include <inttypes.h>
 typedef uint8_t vuint8_t;
 typedef uint16_t vuint16_t;
 typedef uint32_t vuint32_t;

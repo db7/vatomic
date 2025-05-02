@@ -32,8 +32,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Configure Testing
-        run: cmake -S. -Bbuild
+      - name: Prep Env for macos
+        if: matrix.os == 'macos-latest'
+        run: |
+          sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer    
+      - name: Configure Testing Ubuntu
+        run: |
+          cmake -S. -Bbuild
+        if: matrix.os != 'macos-latest'
+      - name: Configure Testing Mac
+        run: |
+          export SDK_ROOT=$(xcrun --sdk macosx --show-sdk-path)
+          cmake -S. -Bbuild -DCMAKE_C_FLAGS="-isysroot $SDK_ROOT" -DCMAKE_CXX_FLAGS="-isysroot $SDK_ROOT"
+        if: matrix.os == 'macos-latest'       
       - name: Build Tests
         run: cmake --build build
       - name: Run Tests
