@@ -193,8 +193,8 @@ template <typename TT, bool IsVolatile> struct TestAtomics {
         for (int order = vsync::memory_order_relaxed;
              order <= vsync::memory_order_seq_cst; order++) {
             subject = mirror = max;
-            // TODO: reverse vals start from end and go to begin
-            for (TT val : vals) {
+            for (auto it = vals.rbegin(); it != vals.rend(); ++it) {
+                TT val = *it;
                 r_mirror = mirror.fetch_and(
                     val, static_cast<std::memory_order>(order));
                 r_var = subject.fetch_and(
@@ -355,12 +355,12 @@ main(void)
     TestAtomics<unsigned long, false>::run_tests();
     TestAtomics<unsigned long int, false>::run_tests();
 #endif
-    // TODO: TestAtomics<long long>::run_tests();
-    // TODO: TestAtomics<long long int>::run_tests();
-    // TODO: TestAtomics<signed long long>::run_tests();
-    // TODO: TestAtomics<signed long long int>::run_tests();
-    // TODO: TestAtomics<unsigned long long>::run_tests();
-    // TODO: TestAtomics<unsigned long long int>::run_tests();
+    TestAtomics<long long, false>::run_tests();
+    TestAtomics<long long int, false>::run_tests();
+    TestAtomics<signed long long, false>::run_tests();
+    TestAtomics<signed long long int, false>::run_tests();
+    TestAtomics<unsigned long long, false>::run_tests();
+    TestAtomics<unsigned long long int, false>::run_tests();
     TestAtomics<size_t, false>::run_tests();
     TestAtomics<bool, false>::run_tests();
 
