@@ -2,6 +2,7 @@
  * Copyright (C) Huawei Technologies Co., Ltd. 2025. All rights reserved.
  * SPDX-License-Identifier: MIT
  */
+#include <bit>
 #define _tmpl_mute
 #include <vsync/atomic/tmplr.h>
 #define _tmpl_unmute
@@ -19,6 +20,8 @@ extern "C" {
 namespace vsync
 {
     template <> struct atomic<TT> {
+        static_assert(sizeof(TT) == sizeof(MAP_MIRROR_TY),
+                      "Signed atomic mirror type size mismatch");
         atomic(const atomic &)                     = delete;
         atomic &operator=(const atomic &)          = delete;
         atomic &operator=(const atomic &) volatile = delete;
@@ -61,10 +64,14 @@ _tmpl_begin(TY = [[s8; s16; s32; s64;]], VL =[[VOL; NON_VOL]]);
             TT &expected, TT desired, memory_order order = memory_order_seq_cst,
             memory_order failure = memory_order_seq_cst) MAP_VL noexcept
         {
-            // TODO: find a way to make the cast on expected safe!
-            return _a.compare_exchange_strong(
-                (MAP_MIRROR_TY &)(expected),
-                static_cast<MAP_MIRROR_TY>(desired), order, failure);
+            MAP_MIRROR_TY expected_mirror =
+                std::bit_cast<MAP_MIRROR_TY>(expected);
+            const MAP_MIRROR_TY desired_mirror =
+                std::bit_cast<MAP_MIRROR_TY>(desired);
+            const bool result = _a.compare_exchange_strong(
+                expected_mirror, desired_mirror, order, failure);
+            expected = std::bit_cast<TT>(expected_mirror);
+            return result;
         }
         bool compare_exchange_weak(
             TT &expected, TT desired,

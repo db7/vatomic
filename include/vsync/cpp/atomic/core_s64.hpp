@@ -2,12 +2,15 @@
  * Copyright (C) Huawei Technologies Co., Ltd. 2025. All rights reserved.
  * SPDX-License-Identifier: MIT
  */
+#include <bit>
 extern "C" {
 #include <vsync/atomic.h>
 }
 namespace vsync
 {
     template <> struct atomic<vint64_t> {
+        static_assert(sizeof(vint64_t) == sizeof(vuint64_t),
+                      "Signed atomic mirror type size mismatch");
         atomic(const atomic &)                     = delete;
         atomic &operator=(const atomic &)          = delete;
         atomic &operator=(const atomic &) volatile = delete;
@@ -53,10 +56,14 @@ namespace vsync
             memory_order order   = memory_order_seq_cst,
             memory_order failure = memory_order_seq_cst) volatile noexcept
         {
-            // TODO: find a way to make the cast on expected safe!
-            return _a.compare_exchange_strong((vuint64_t &)(expected),
-                                              static_cast<vuint64_t>(desired),
-                                              order, failure);
+            vuint64_t expected_mirror =
+                std::bit_cast<vuint64_t>(expected);
+            const vuint64_t desired_mirror =
+                std::bit_cast<vuint64_t>(desired);
+            const bool result = _a.compare_exchange_strong(
+                expected_mirror, desired_mirror, order, failure);
+            expected = std::bit_cast<vint64_t>(expected_mirror);
+            return result;
         }
         bool compare_exchange_weak(
             vint64_t &expected, vint64_t desired,
@@ -182,10 +189,14 @@ namespace vsync
             memory_order order   = memory_order_seq_cst,
             memory_order failure = memory_order_seq_cst) noexcept
         {
-            // TODO: find a way to make the cast on expected safe!
-            return _a.compare_exchange_strong((vuint64_t &)(expected),
-                                              static_cast<vuint64_t>(desired),
-                                              order, failure);
+            vuint64_t expected_mirror =
+                std::bit_cast<vuint64_t>(expected);
+            const vuint64_t desired_mirror =
+                std::bit_cast<vuint64_t>(desired);
+            const bool result = _a.compare_exchange_strong(
+                expected_mirror, desired_mirror, order, failure);
+            expected = std::bit_cast<vint64_t>(expected_mirror);
+            return result;
         }
         bool compare_exchange_weak(
             vint64_t &expected, vint64_t desired,
