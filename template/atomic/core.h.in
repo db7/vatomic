@@ -110,15 +110,15 @@ _tmpl_begin(TY = [[u8; u16; u32; u64; sz; ptr]], h.in = h);
 _tmpl_end;
 
 /* *****************************************************************************
- * config
+ * Barrier remap
  * ****************************************************************************/
 #if defined(VATOMIC_ENABLE_ATOMIC_SC)
 _tmpl_begin(TY = [[fnc; u8; u16; u32; u64; sz; ptr]], h.in = h);
-#include <vsync/atomic/internal/config/TY_sc.h>
+#include <vsync/atomic/internal/remap_TY_sc.h>
 _tmpl_end;
 #elif defined(VATOMIC_ENABLE_ATOMIC_RLX)
 _tmpl_begin(TY = [[fnc; u8; u16; u32; u64; sz; ptr]], h.in = h);
-#include <vsync/atomic/internal/config/TY_rlx.h>
+#include <vsync/atomic/internal/remap_TY_rlx.h>
 _tmpl_end;
 #endif
 /* *****************************************************************************

@@ -14,9 +14,7 @@ set(ALL_TYPES
     fnc)
 
 foreach(TARGET IN ITEMS ${TARGETS})
-
     get_filename_component(TARGET ${TARGET} NAME_WE)
-
     if(DEFINED ${TARGET}_TYPES)
         set(TYPES ${${TARGET}_TYPES})
     else()
@@ -32,7 +30,7 @@ foreach(TARGET IN ITEMS ${TARGETS})
             COMMAND
                 ${TMPLR_PROGRAM} -FTY=${TY} ${VATOMIC_RULES}
                 ${CMAKE_CURRENT_SOURCE_DIR}/${TMPL}.in >
-                ${PROJECT_SOURCE_DIR}/include/vsync/atomic/internal/config/${OUT}
+                ${PROJECT_SOURCE_DIR}/include/vsync/atomic/internal/remap_${OUT}
         )
         add_dependencies(vatomic-generate ${OUT})
     endforeach()
