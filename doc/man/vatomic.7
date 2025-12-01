@@ -1,0 +1,83 @@
+.\" SPDX-License-Identifier: MIT
+.TH VATOMIC 7 "@__DATE__@" "vatomic @__VERSION__@" "Miscellaneous Information Manual"
+.SH NAME
+vatomic \- formally-verified atomic operations library
+.SH DESCRIPTION
+.PP
+vatomic is a header-only library that provides a rich set of atomic operations
+for mainstream architectures, including ARMv7, ARMv8 (AArch32 and AArch64),
+RISC-V, and x86_64.
+Its interface matches the guarantees described by the VSync Memory Model
+(\fBvmm.cat\fP), allowing developers to reason about memory ordering using the
+same formal description employed by the library itself.
+.PP
+The library exposes both a low-level core interface and higher-level await and
+dispatch helpers, all implemented in portable C with architecture-specific
+backends when required.
+Because the headers adhere to the VSync model, programs that rely on vatomic
+can be verified with model checkers such as Dartagnan or vsyncer by reusing
+the provided cat specification.
+.SH ATOMIC TYPES
+.PP
+vatomic defines fixed-width atomic wrappers matching their unsigned integral
+counterparts: \fBvatomic8_t\fP, \fBvatomic16_t\fP, \fBvatomic32_t\fP,
+\fBvatomic64_t\fP, and \fBvatomicsz_t\fP for size_t.
+Pointer atomics are represented by \fBvatomicptr_t\fP while
+\fBvatomicptr(T)\fP documents the pointee type at the declaration site.
+Each type pairs with a non-atomic counterpart
+(\fBuint8_t\fP, \fBuint16_t\fP, etc.) to describe the underlying storage used
+by the read/modify/write helpers.
+.SH MEMORY ORDERS
+.PP
+All operations accept a \fBvsync_memory_order\fP suffix:
+\fB_rlx\fP (relaxed), \fB_acq\fP (acquire), and \fB_rel\fP (release).
+Operations without such a suffix are sequentially consistent.
+.SH CONFIGURATION
+.PP
+The header \fBvsync/atomic/config.h\fP defines project-wide switches that can be
+set before including the core header:
+.TP
+.B VATOMIC_DISABLE_POLITE_AWAIT
+Forces busy-wait loops to spin without issuing PAUSE/WFE instructions on x86_64
+and arm64, overriding the default polite behavior.
+.TP
+.B VATOMIC_BUILTINS
+Builds every atomic primitive using the compiler's \fB__atomic\fP builtins.
+When unset, the library selects hand-written assembly backends for arm32/arm64
+when appropriate.
+.TP
+.B VATOMIC_ENABLE_ATOMIC_SC
+Upgrades every operation and fence to sequential consistency regardless of the
+requested memory order.
+.TP
+.B VATOMIC_ENABLE_ATOMIC_RLX
+Forces all operations and fences to behave as relaxed atomics. This option is
+only relevant for testing.
+.TP
+.B VATOMIC_DISABLE_ARM64_LSE
+Disables use of ARMv8 LSE instructions even when the toolchain advertises them.
+.TP
+.B VATOMIC_ENABLE_ARM64_LXE
+Enables ARMv8 LSE instructions in the slow path of LLSC operations whenever the
+compiler is configured with \fB-march=armv8-a+lse\fP or equivalent.
+.PP
+vatomic is a component of the broader VSync effort and is also used by
+libvsync.
+Refer to the project documentation and ASPLOS'21 publication for more detail on
+the research behind the library.
+.SH REFERENCES
+.IP \(bu 2
+Oberhauser et al., "VSync: push-button verification and optimization for
+synchronization primitives on weak memory models," ASPLOS 2021,
+<https://dl.acm.org/doi/10.1145/3445814.3446748>.
+.SH FILES
+.TP
+.B include/vsync/atomic/doc.h
+Top-level documentation stub mirrored by this manual page.
+.TP
+.B vmm.cat
+VSync Memory Model specification referenced throughout the interface.
+.SH SEE ALSO
+\fBvmm.cat\fP,
+\fBvsync/atomic/core.h\fP,
+the project README, and the VSync documentation hosted in the \fBdoc/\fP tree.
