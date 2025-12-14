@@ -8,6 +8,7 @@ project(
     VERSION 2.3.1
     DESCRIPTION "VSync atomics")
 
+set(CMAKE_EXPORT_COMMANDS ON)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 # Dispatch macros require GNU extensions when building as C99.

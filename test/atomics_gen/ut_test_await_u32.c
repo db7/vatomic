@@ -470,7 +470,6 @@ ut_atomic_u32_await_neq_add(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -487,7 +486,6 @@ ut_atomic_u32_await_neq_sub(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -504,7 +502,6 @@ ut_atomic_u32_await_eq_add(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -521,7 +518,6 @@ ut_atomic_u32_await_eq_sub(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -538,7 +534,6 @@ ut_atomic_u32_await_le_add(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -555,7 +550,6 @@ ut_atomic_u32_await_le_sub(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -572,7 +566,6 @@ ut_atomic_u32_await_gt_add(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -589,7 +582,6 @@ ut_atomic_u32_await_gt_sub(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -606,7 +598,6 @@ ut_atomic_u32_await_ge_add(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -623,7 +614,6 @@ ut_atomic_u32_await_ge_sub(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -640,7 +630,6 @@ ut_atomic_u32_await_neq_add_rel(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -657,7 +646,6 @@ ut_atomic_u32_await_neq_sub_rel(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -674,7 +662,6 @@ ut_atomic_u32_await_eq_add_rel(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -691,7 +678,6 @@ ut_atomic_u32_await_eq_sub_rel(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -708,7 +694,6 @@ ut_atomic_u32_await_le_add_rel(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -725,7 +710,6 @@ ut_atomic_u32_await_le_sub_rel(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -742,7 +726,6 @@ ut_atomic_u32_await_gt_add_rel(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -759,7 +742,6 @@ ut_atomic_u32_await_gt_sub_rel(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -776,7 +758,6 @@ ut_atomic_u32_await_ge_add_rel(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -793,7 +774,6 @@ ut_atomic_u32_await_ge_sub_rel(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -810,7 +790,6 @@ ut_atomic_u32_await_neq_add_acq(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -827,7 +806,6 @@ ut_atomic_u32_await_neq_sub_acq(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -844,7 +822,6 @@ ut_atomic_u32_await_eq_add_acq(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -861,7 +838,6 @@ ut_atomic_u32_await_eq_sub_acq(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -878,7 +854,6 @@ ut_atomic_u32_await_le_add_acq(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -895,7 +870,6 @@ ut_atomic_u32_await_le_sub_acq(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -912,7 +886,6 @@ ut_atomic_u32_await_gt_add_acq(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -929,7 +902,6 @@ ut_atomic_u32_await_gt_sub_acq(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -946,7 +918,6 @@ ut_atomic_u32_await_ge_add_acq(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -963,7 +934,6 @@ ut_atomic_u32_await_ge_sub_acq(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -980,7 +950,6 @@ ut_atomic_u32_await_neq_add_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -997,7 +966,6 @@ ut_atomic_u32_await_neq_sub_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -1014,7 +982,6 @@ ut_atomic_u32_await_eq_add_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -1031,7 +998,6 @@ ut_atomic_u32_await_eq_sub_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -1048,7 +1014,6 @@ ut_atomic_u32_await_le_add_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -1065,7 +1030,6 @@ ut_atomic_u32_await_le_sub_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -1082,7 +1046,6 @@ ut_atomic_u32_await_gt_add_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -1099,7 +1062,6 @@ ut_atomic_u32_await_gt_sub_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -1116,7 +1078,6 @@ ut_atomic_u32_await_ge_add_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************
@@ -1133,7 +1094,6 @@ ut_atomic_u32_await_ge_sub_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == ref);
     (void)(val);
-    ;
     (void)(ref);
 }
 /*****************************************************************************

@@ -109,7 +109,6 @@ ut_atomic_ptr_xchg(void)
     val = vatomicptr_read(&obj);
     assert(val == (void *)VUINTPTR_MAX);
     (void)(val);
-    ;
     (void)(old);
 }
 /*****************************************************************************
@@ -126,7 +125,6 @@ ut_atomic_ptr_xchg_acq(void)
     val = vatomicptr_read(&obj);
     assert(val == (void *)VUINTPTR_MAX);
     (void)(val);
-    ;
     (void)(old);
 }
 /*****************************************************************************
@@ -143,7 +141,6 @@ ut_atomic_ptr_xchg_rel(void)
     val = vatomicptr_read(&obj);
     assert(val == (void *)VUINTPTR_MAX);
     (void)(val);
-    ;
     (void)(old);
 }
 /*****************************************************************************
@@ -160,7 +157,6 @@ ut_atomic_ptr_xchg_rlx(void)
     val = vatomicptr_read(&obj);
     assert(val == (void *)VUINTPTR_MAX);
     (void)(val);
-    ;
     (void)(old);
 }
 /*****************************************************************************
@@ -181,7 +177,6 @@ ut_atomic_ptr_cmpxchg(void)
     val = vatomicptr_read(&obj);
     assert(val == (void *)VUINTPTR_MAX);
     (void)(val);
-    ;
     (void)(old);
 }
 /*****************************************************************************
@@ -202,7 +197,6 @@ ut_atomic_ptr_cmpxchg_acq(void)
     val = vatomicptr_read(&obj);
     assert(val == (void *)VUINTPTR_MAX);
     (void)(val);
-    ;
     (void)(old);
 }
 /*****************************************************************************
@@ -223,7 +217,6 @@ ut_atomic_ptr_cmpxchg_rel(void)
     val = vatomicptr_read(&obj);
     assert(val == (void *)VUINTPTR_MAX);
     (void)(val);
-    ;
     (void)(old);
 }
 /*****************************************************************************
@@ -244,7 +237,6 @@ ut_atomic_ptr_cmpxchg_rlx(void)
     val = vatomicptr_read(&obj);
     assert(val == (void *)VUINTPTR_MAX);
     (void)(val);
-    ;
     (void)(old);
 }
 /*****************************************************************************

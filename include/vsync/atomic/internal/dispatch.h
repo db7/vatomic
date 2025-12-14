@@ -9,7 +9,7 @@
 #include <vsync/atomic/internal/dispatch_select.h>
 
 #if VSYNC_DISPATCH_BACKEND == VSYNC_DISPATCH_BACKEND_DISABLED
-    #error                                                                       \
+    #error                                                                     \
         "vsync/atomic/dispatch.h requires -std=gnu99 or -std=c11+. Compile "     \
         "without __STRICT_ANSI__, or include typed headers instead of the "      \
         "dispatcher."

@@ -15,12 +15,12 @@
 static void
 exercise(void)
 {
-    vatomic8_t a8    = {0};
-    vatomic16_t a16  = {0};
-    vatomic32_t a32  = {0};
-    vatomic64_t a64  = {0};
-    vatomicsz_t asz  = {0};
-    vatomicptr_t ap  = {0};
+    vatomic8_t a8          = {0};
+    vatomic16_t a16        = {0};
+    vatomic32_t a32        = {0};
+    vatomic64_t a64        = {0};
+    vatomicsz_t asz        = {0};
+    vatomicptr_t ap        = {0};
     const vatomic32_t ca32 = {0};
 
     vatomic_write(&a8, 1);

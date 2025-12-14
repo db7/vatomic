@@ -38,7 +38,6 @@ mt_atomic_inc(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -69,7 +68,6 @@ mt_atomic_dec(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -100,7 +98,6 @@ mt_atomic_inc_rel(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -131,7 +128,6 @@ mt_atomic_dec_rel(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -162,7 +158,6 @@ mt_atomic_inc_rlx(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -193,7 +188,6 @@ mt_atomic_dec_rlx(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -224,7 +218,6 @@ mt_atomic_sub(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -255,7 +248,6 @@ mt_atomic_add(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -286,7 +278,6 @@ mt_atomic_sub_rel(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -317,7 +308,6 @@ mt_atomic_add_rel(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -348,7 +338,6 @@ mt_atomic_sub_rlx(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -379,7 +368,6 @@ mt_atomic_add_rlx(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -415,7 +403,6 @@ mt_atomic_cmpxchg(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -451,7 +438,6 @@ mt_atomic_cmpxchg_rel(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -487,7 +473,6 @@ mt_atomic_cmpxchg_acq(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -523,7 +508,6 @@ mt_atomic_cmpxchg_rlx(void)
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -769,7 +753,6 @@ mt_atomic_and(void)
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -810,7 +793,6 @@ mt_atomic_or(void)
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -851,7 +833,6 @@ mt_atomic_xor(void)
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -892,7 +873,6 @@ mt_atomic_and_rel(void)
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -933,7 +913,6 @@ mt_atomic_or_rel(void)
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -974,7 +953,6 @@ mt_atomic_xor_rel(void)
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -1015,7 +993,6 @@ mt_atomic_and_rlx(void)
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -1056,7 +1033,6 @@ mt_atomic_or_rlx(void)
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************
@@ -1097,7 +1073,6 @@ mt_atomic_xor_rlx(void)
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
     (void)(expected);
-    ;
     (void)(val);
 }
 /*****************************************************************************

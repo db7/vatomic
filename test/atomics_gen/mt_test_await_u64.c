@@ -9,11 +9,11 @@
 #include <vsync/atomic.h>
 /* keep number of threads even */
 #define IT            10
-#define V_DOUBLE(_v_) ((_v_) * 2)
+#define V_DOUBLE(_v_) ((_v_)*2)
 #define MAX_THREADS   10
 #define VUINT64_VAL   ((((vuint64_t)0xF) << 32U) | ((vuint64_t)VUINT32_MAX))
 #ifndef IS_EVEN
-    #define IS_EVEN(_v_) (((_v_) & 1U) == 0U)
+    #define IS_EVEN(_v_) (((_v_)&1U) == 0U)
 #endif
 vatomic64_t g_shared;
 /*****************************************************************************

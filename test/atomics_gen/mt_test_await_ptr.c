@@ -10,7 +10,7 @@
 /* keep number of threads even */
 #define MAX_THREADS 10
 #ifndef IS_EVEN
-    #define IS_EVEN(_v_) (((_v_) & 1U) == 0U)
+    #define IS_EVEN(_v_) (((_v_)&1U) == 0U)
 #endif
 vatomicptr_t g_shared;
 /*****************************************************************************

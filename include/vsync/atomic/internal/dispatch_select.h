@@ -6,7 +6,6 @@
 #ifndef VATOMIC_INTERNAL_DISPATCH_SELECT_H
 #define VATOMIC_INTERNAL_DISPATCH_SELECT_H
 
-#include <stdint.h>
 #include <vsync/common/macros.h>
 #include <vsync/vtypes.h>
 
@@ -31,14 +30,14 @@
 #elif defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 201112L)
     #define VSYNC_DISPATCH_STATIC_ASSERT(cond, msg) _Static_assert(cond, #msg)
 #elif defined(__GNUC__)
-    #define VSYNC_DISPATCH_STATIC_ASSERT(cond, msg)                             \
+    #define VSYNC_DISPATCH_STATIC_ASSERT(cond, msg)                            \
         __extension__ _Static_assert(cond, #msg)
 #else
-    #define VSYNC_DISPATCH_STATIC_ASSERT__(cond, line)                           \
+    #define VSYNC_DISPATCH_STATIC_ASSERT__(cond, line)                         \
         typedef char vsync_dispatch_static_assert_##line[(cond) ? 1 : -1]
-    #define VSYNC_DISPATCH_STATIC_ASSERT_(cond, line)                            \
+    #define VSYNC_DISPATCH_STATIC_ASSERT_(cond, line)                          \
         VSYNC_DISPATCH_STATIC_ASSERT__(cond, line)
-    #define VSYNC_DISPATCH_STATIC_ASSERT(cond, msg)                              \
+    #define VSYNC_DISPATCH_STATIC_ASSERT(cond, msg)                            \
         VSYNC_DISPATCH_STATIC_ASSERT_(cond, __LINE__)
 #endif
 
@@ -52,7 +51,7 @@ VSYNC_DISPATCH_STATIC_ASSERT(sizeof(void *) == sizeof(uintptr_t),
     #define VSYNC_DISPATCH_PTR_PREFIX vatomic32
     #define VSYNC_DISPATCH_PTR_VALUE  vuint32_t
 #else
-    VSYNC_DISPATCH_STATIC_ASSERT(0, unsupported_pointer_size_for_dispatch);
+VSYNC_DISPATCH_STATIC_ASSERT(0, unsupported_pointer_size_for_dispatch);
 #endif
 
 #if SIZE_MAX == UINT64_MAX
@@ -62,7 +61,7 @@ VSYNC_DISPATCH_STATIC_ASSERT(sizeof(void *) == sizeof(uintptr_t),
     #define VSYNC_DISPATCH_SZ_PREFIX vatomic32
     #define VSYNC_DISPATCH_SZ_VALUE  vuint32_t
 #else
-    VSYNC_DISPATCH_STATIC_ASSERT(0, unsupported_size_t_for_dispatch);
+VSYNC_DISPATCH_STATIC_ASSERT(0, unsupported_size_t_for_dispatch);
 #endif
 
 #endif /* VATOMIC_INTERNAL_DISPATCH_SELECT_H */
