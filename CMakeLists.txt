@@ -10,7 +10,8 @@ project(
 
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_EXTENSIONS OFF)
+# Dispatch macros require GNU extensions when building as C99.
+set(CMAKE_C_EXTENSIONS ON)
 
 include(GNUInstallDirs)
 include(CheckSymbolExists)
