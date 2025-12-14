@@ -16,7 +16,7 @@ ut_atomic_u32_read(void)
     vatomic32_t obj = {(vuint32_t)1};
     vuint32_t val   = vatomic32_read(&obj);
     assert(val == (vuint32_t)1);
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_read_acq
@@ -27,7 +27,7 @@ ut_atomic_u32_read_acq(void)
     vatomic32_t obj = {(vuint32_t)1};
     vuint32_t val   = vatomic32_read_acq(&obj);
     assert(val == (vuint32_t)1);
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_read_rlx
@@ -38,7 +38,7 @@ ut_atomic_u32_read_rlx(void)
     vatomic32_t obj = {(vuint32_t)1};
     vuint32_t val   = vatomic32_read_rlx(&obj);
     assert(val == (vuint32_t)1);
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_init
@@ -52,7 +52,7 @@ ut_atomic_u32_init(void)
     vatomic32_init(&obj, VUINT32_MAX);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_write
@@ -66,7 +66,7 @@ ut_atomic_u32_write(void)
     vatomic32_write(&obj, VUINT32_MAX);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_write_rel
@@ -80,7 +80,7 @@ ut_atomic_u32_write_rel(void)
     vatomic32_write_rel(&obj, VUINT32_MAX);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_write_rlx
@@ -94,7 +94,7 @@ ut_atomic_u32_write_rlx(void)
     vatomic32_write_rlx(&obj, VUINT32_MAX);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_xchg
@@ -109,7 +109,9 @@ ut_atomic_u32_xchg(void)
     assert(old == (vuint32_t)1);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_xchg_acq
@@ -124,7 +126,9 @@ ut_atomic_u32_xchg_acq(void)
     assert(old == (vuint32_t)1);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_xchg_rel
@@ -139,7 +143,9 @@ ut_atomic_u32_xchg_rel(void)
     assert(old == (vuint32_t)1);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_xchg_rlx
@@ -154,7 +160,9 @@ ut_atomic_u32_xchg_rlx(void)
     assert(old == (vuint32_t)1);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_cmpxchg
@@ -173,7 +181,9 @@ ut_atomic_u32_cmpxchg(void)
     assert(old == (vuint32_t)1);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_cmpxchg_acq
@@ -192,7 +202,9 @@ ut_atomic_u32_cmpxchg_acq(void)
     assert(old == (vuint32_t)1);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_cmpxchg_rel
@@ -211,7 +223,9 @@ ut_atomic_u32_cmpxchg_rel(void)
     assert(old == (vuint32_t)1);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_cmpxchg_rlx
@@ -230,7 +244,9 @@ ut_atomic_u32_cmpxchg_rlx(void)
     assert(old == (vuint32_t)1);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_add
@@ -249,7 +265,7 @@ ut_atomic_u32_add(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_add_rel
@@ -268,7 +284,7 @@ ut_atomic_u32_add_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_add_rlx
@@ -287,7 +303,7 @@ ut_atomic_u32_add_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_add
@@ -308,7 +324,9 @@ ut_atomic_u32_get_add(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_add_get
@@ -329,7 +347,9 @@ ut_atomic_u32_add_get(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, cur);
+    (void)(val);
+    ;
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_add_acq
@@ -350,7 +370,9 @@ ut_atomic_u32_get_add_acq(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_add_get_acq
@@ -371,7 +393,9 @@ ut_atomic_u32_add_get_acq(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, cur);
+    (void)(val);
+    ;
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_add_rel
@@ -392,7 +416,9 @@ ut_atomic_u32_get_add_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_add_get_rel
@@ -413,7 +439,9 @@ ut_atomic_u32_add_get_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, cur);
+    (void)(val);
+    ;
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_add_rlx
@@ -434,7 +462,9 @@ ut_atomic_u32_get_add_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_add_get_rlx
@@ -455,7 +485,9 @@ ut_atomic_u32_add_get_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, cur);
+    (void)(val);
+    ;
+    (void)(cur);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_inc
@@ -474,7 +506,7 @@ ut_atomic_u32_inc(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_inc_rel
@@ -493,7 +525,7 @@ ut_atomic_u32_inc_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_inc_rlx
@@ -512,7 +544,7 @@ ut_atomic_u32_inc_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_inc
@@ -533,7 +565,9 @@ ut_atomic_u32_get_inc(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_inc_get
@@ -554,7 +588,9 @@ ut_atomic_u32_inc_get(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_inc_acq
@@ -575,7 +611,9 @@ ut_atomic_u32_get_inc_acq(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_inc_get_acq
@@ -596,7 +634,9 @@ ut_atomic_u32_inc_get_acq(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_inc_rel
@@ -617,7 +657,9 @@ ut_atomic_u32_get_inc_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_inc_get_rel
@@ -638,7 +680,9 @@ ut_atomic_u32_inc_get_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_inc_rlx
@@ -659,7 +703,9 @@ ut_atomic_u32_get_inc_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_inc_get_rlx
@@ -680,7 +726,9 @@ ut_atomic_u32_inc_get_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_sub
@@ -699,7 +747,7 @@ ut_atomic_u32_sub(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_sub_rel
@@ -718,7 +766,7 @@ ut_atomic_u32_sub_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_sub_rlx
@@ -737,7 +785,7 @@ ut_atomic_u32_sub_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_sub
@@ -758,7 +806,9 @@ ut_atomic_u32_get_sub(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_sub_get
@@ -779,7 +829,9 @@ ut_atomic_u32_sub_get(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, cur);
+    (void)(val);
+    ;
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_sub_acq
@@ -800,7 +852,9 @@ ut_atomic_u32_get_sub_acq(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_sub_get_acq
@@ -821,7 +875,9 @@ ut_atomic_u32_sub_get_acq(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, cur);
+    (void)(val);
+    ;
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_sub_rel
@@ -842,7 +898,9 @@ ut_atomic_u32_get_sub_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_sub_get_rel
@@ -863,7 +921,9 @@ ut_atomic_u32_sub_get_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, cur);
+    (void)(val);
+    ;
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_sub_rlx
@@ -884,7 +944,9 @@ ut_atomic_u32_get_sub_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_sub_get_rlx
@@ -905,7 +967,9 @@ ut_atomic_u32_sub_get_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val, cur);
+    (void)(val);
+    ;
+    (void)(cur);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_dec
@@ -924,7 +988,7 @@ ut_atomic_u32_dec(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_dec_rel
@@ -943,7 +1007,7 @@ ut_atomic_u32_dec_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /* ****************************************************************************
  * UnitTest: vatomic32_dec_rlx
@@ -962,7 +1026,7 @@ ut_atomic_u32_dec_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_dec
@@ -983,7 +1047,9 @@ ut_atomic_u32_get_dec(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(old, val);
+    (void)(old);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_dec_get
@@ -1004,7 +1070,9 @@ ut_atomic_u32_dec_get(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_dec_acq
@@ -1025,7 +1093,9 @@ ut_atomic_u32_get_dec_acq(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(old, val);
+    (void)(old);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_dec_get_acq
@@ -1046,7 +1116,9 @@ ut_atomic_u32_dec_get_acq(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_dec_rel
@@ -1067,7 +1139,9 @@ ut_atomic_u32_get_dec_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(old, val);
+    (void)(old);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_dec_get_rel
@@ -1088,7 +1162,9 @@ ut_atomic_u32_dec_get_rel(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_dec_rlx
@@ -1109,7 +1185,9 @@ ut_atomic_u32_get_dec_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(old, val);
+    (void)(old);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_dec_get_rlx
@@ -1130,7 +1208,9 @@ ut_atomic_u32_dec_get_rlx(void)
         val = vatomic32_read(&obj);
         assert(val == ref);
     }
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_max
@@ -1149,7 +1229,7 @@ ut_atomic_u32_max(void)
     vatomic32_max(&obj, (vuint32_t)1);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_max_rel
@@ -1168,7 +1248,7 @@ ut_atomic_u32_max_rel(void)
     vatomic32_max_rel(&obj, (vuint32_t)1);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_max_rlx
@@ -1187,7 +1267,7 @@ ut_atomic_u32_max_rlx(void)
     vatomic32_max_rlx(&obj, (vuint32_t)1);
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_max
@@ -1209,7 +1289,9 @@ ut_atomic_u32_get_max(void)
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
 
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_max_get
@@ -1231,7 +1313,9 @@ ut_atomic_u32_max_get(void)
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
 
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_max_acq
@@ -1253,7 +1337,9 @@ ut_atomic_u32_get_max_acq(void)
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
 
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_max_get_acq
@@ -1275,7 +1361,9 @@ ut_atomic_u32_max_get_acq(void)
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
 
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_max_rel
@@ -1297,7 +1385,9 @@ ut_atomic_u32_get_max_rel(void)
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
 
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_max_get_rel
@@ -1319,7 +1409,9 @@ ut_atomic_u32_max_get_rel(void)
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
 
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_max_rlx
@@ -1341,7 +1433,9 @@ ut_atomic_u32_get_max_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
 
-    V_UNUSED(val, old);
+    (void)(val);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_max_get_rlx
@@ -1363,7 +1457,9 @@ ut_atomic_u32_max_get_rlx(void)
     val = vatomic32_read(&obj);
     assert(val == VUINT32_MAX);
 
-    V_UNUSED(cur, val);
+    (void)(cur);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_and
@@ -1383,7 +1479,7 @@ ut_atomic_u32_and(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_and_rel
@@ -1403,7 +1499,7 @@ ut_atomic_u32_and_rel(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_and_rlx
@@ -1423,7 +1519,7 @@ ut_atomic_u32_and_rlx(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_and
@@ -1445,7 +1541,9 @@ ut_atomic_u32_get_and(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur, old);
+    (void)(cur);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_and_get
@@ -1466,7 +1564,7 @@ ut_atomic_u32_and_get(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_and_acq
@@ -1488,7 +1586,9 @@ ut_atomic_u32_get_and_acq(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur, old);
+    (void)(cur);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_and_get_acq
@@ -1509,7 +1609,7 @@ ut_atomic_u32_and_get_acq(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_and_rel
@@ -1531,7 +1631,9 @@ ut_atomic_u32_get_and_rel(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur, old);
+    (void)(cur);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_and_get_rel
@@ -1552,7 +1654,7 @@ ut_atomic_u32_and_get_rel(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_and_rlx
@@ -1574,7 +1676,9 @@ ut_atomic_u32_get_and_rlx(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur, old);
+    (void)(cur);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_and_get_rlx
@@ -1595,7 +1699,7 @@ ut_atomic_u32_and_get_rlx(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_or
@@ -1615,7 +1719,7 @@ ut_atomic_u32_or(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_or_rel
@@ -1635,7 +1739,7 @@ ut_atomic_u32_or_rel(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_or_rlx
@@ -1655,7 +1759,7 @@ ut_atomic_u32_or_rlx(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_or
@@ -1677,7 +1781,9 @@ ut_atomic_u32_get_or(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur, old);
+    (void)(cur);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_or_get
@@ -1698,7 +1804,7 @@ ut_atomic_u32_or_get(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_or_acq
@@ -1720,7 +1826,9 @@ ut_atomic_u32_get_or_acq(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur, old);
+    (void)(cur);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_or_get_acq
@@ -1741,7 +1849,7 @@ ut_atomic_u32_or_get_acq(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_or_rel
@@ -1763,7 +1871,9 @@ ut_atomic_u32_get_or_rel(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur, old);
+    (void)(cur);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_or_get_rel
@@ -1784,7 +1894,7 @@ ut_atomic_u32_or_get_rel(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_or_rlx
@@ -1806,7 +1916,9 @@ ut_atomic_u32_get_or_rlx(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur, old);
+    (void)(cur);
+    ;
+    (void)(old);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_or_get_rlx
@@ -1827,7 +1939,7 @@ ut_atomic_u32_or_get_rlx(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_xor
@@ -1847,7 +1959,7 @@ ut_atomic_u32_xor(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_xor_rel
@@ -1867,7 +1979,7 @@ ut_atomic_u32_xor_rel(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_xor_rlx
@@ -1887,7 +1999,7 @@ ut_atomic_u32_xor_rlx(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_xor
@@ -1909,7 +2021,9 @@ ut_atomic_u32_get_xor(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(old, cur);
+    (void)(old);
+    ;
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_or_get
@@ -1930,7 +2044,7 @@ ut_atomic_u32_xor_get(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_xor_acq
@@ -1952,7 +2066,9 @@ ut_atomic_u32_get_xor_acq(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(old, cur);
+    (void)(old);
+    ;
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_or_get_acq
@@ -1973,7 +2089,7 @@ ut_atomic_u32_xor_get_acq(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_xor_rel
@@ -1995,7 +2111,9 @@ ut_atomic_u32_get_xor_rel(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(old, cur);
+    (void)(old);
+    ;
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_or_get_rel
@@ -2016,7 +2134,7 @@ ut_atomic_u32_xor_get_rel(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_get_xor_rlx
@@ -2038,7 +2156,9 @@ ut_atomic_u32_get_xor_rlx(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(old, cur);
+    (void)(old);
+    ;
+    (void)(cur);
 }
 /*****************************************************************************
  * UnitTest: vatomic32_or_get_rlx
@@ -2059,7 +2179,7 @@ ut_atomic_u32_xor_get_rlx(void)
         cur = vatomic32_read(&obj);
         assert(cur == ref);
     }
-    V_UNUSED(cur);
+    (void)(cur);
 }
 /*****************************************************************************
  * Entry point

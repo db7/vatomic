@@ -20,7 +20,7 @@ mt_atomic_inc_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_inc(&g_shared);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -37,7 +37,9 @@ mt_atomic_inc(void)
     vuint32_t expected = init + (N * IT);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_dec
@@ -49,7 +51,7 @@ mt_atomic_dec_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_dec(&g_shared);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -66,7 +68,9 @@ mt_atomic_dec(void)
     vuint32_t expected = init - (N * IT);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_inc_rel
@@ -78,7 +82,7 @@ mt_atomic_inc_rel_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_inc_rel(&g_shared);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -95,7 +99,9 @@ mt_atomic_inc_rel(void)
     vuint32_t expected = init + (N * IT);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_dec_rel
@@ -107,7 +113,7 @@ mt_atomic_dec_rel_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_dec_rel(&g_shared);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -124,7 +130,9 @@ mt_atomic_dec_rel(void)
     vuint32_t expected = init - (N * IT);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_inc_rlx
@@ -136,7 +144,7 @@ mt_atomic_inc_rlx_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_inc_rlx(&g_shared);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -153,7 +161,9 @@ mt_atomic_inc_rlx(void)
     vuint32_t expected = init + (N * IT);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_dec_rlx
@@ -165,7 +175,7 @@ mt_atomic_dec_rlx_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_dec_rlx(&g_shared);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -182,7 +192,9 @@ mt_atomic_dec_rlx(void)
     vuint32_t expected = init - (N * IT);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_sub
@@ -194,7 +206,7 @@ mt_atomic_sub_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_sub(&g_shared, 0xFFU);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -211,7 +223,9 @@ mt_atomic_sub(void)
     vuint32_t expected = init - (N * IT * 0xFFU);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_add
@@ -223,7 +237,7 @@ mt_atomic_add_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_add(&g_shared, 0xFFU);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -240,7 +254,9 @@ mt_atomic_add(void)
     vuint32_t expected = init + (N * IT * 0xFFU);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_sub_rel
@@ -252,7 +268,7 @@ mt_atomic_sub_rel_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_sub_rel(&g_shared, 0xFFU);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -269,7 +285,9 @@ mt_atomic_sub_rel(void)
     vuint32_t expected = init - (N * IT * 0xFFU);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_add_rel
@@ -281,7 +299,7 @@ mt_atomic_add_rel_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_add_rel(&g_shared, 0xFFU);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -298,7 +316,9 @@ mt_atomic_add_rel(void)
     vuint32_t expected = init + (N * IT * 0xFFU);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_sub_rlx
@@ -310,7 +330,7 @@ mt_atomic_sub_rlx_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_sub_rlx(&g_shared, 0xFFU);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -327,7 +347,9 @@ mt_atomic_sub_rlx(void)
     vuint32_t expected = init - (N * IT * 0xFFU);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_add_rlx
@@ -339,7 +361,7 @@ mt_atomic_add_rlx_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_add_rlx(&g_shared, 0xFFU);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -356,7 +378,9 @@ mt_atomic_add_rlx(void)
     vuint32_t expected = init + (N * IT * 0xFFU);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_cmpxchg
@@ -373,7 +397,7 @@ mt_atomic_cmpxchg_run(void *args)
             old = vatomic32_cmpxchg(&g_shared, cur, cur + 1);
         } while (cur != old);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -390,7 +414,9 @@ mt_atomic_cmpxchg(void)
     vuint32_t expected = init + (N * IT);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_cmpxchg_rel
@@ -407,7 +433,7 @@ mt_atomic_cmpxchg_rel_run(void *args)
             old = vatomic32_cmpxchg_rel(&g_shared, cur, cur + 1);
         } while (cur != old);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -424,7 +450,9 @@ mt_atomic_cmpxchg_rel(void)
     vuint32_t expected = init + (N * IT);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_cmpxchg_acq
@@ -441,7 +469,7 @@ mt_atomic_cmpxchg_acq_run(void *args)
             old = vatomic32_cmpxchg_acq(&g_shared, cur, cur + 1);
         } while (cur != old);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -458,7 +486,9 @@ mt_atomic_cmpxchg_acq(void)
     vuint32_t expected = init + (N * IT);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_cmpxchg_rlx
@@ -475,7 +505,7 @@ mt_atomic_cmpxchg_rlx_run(void *args)
             old = vatomic32_cmpxchg_rlx(&g_shared, cur, cur + 1);
         } while (cur != old);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -492,7 +522,9 @@ mt_atomic_cmpxchg_rlx(void)
     vuint32_t expected = init + (N * IT);
     vuint32_t val      = vatomic32_read(&g_shared);
     assert(expected == val);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_xchg
@@ -504,7 +536,7 @@ mt_atomic_xchg_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         (void)vatomic32_xchg(&g_shared, (vuint32_t)tid);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -535,7 +567,7 @@ mt_atomic_xchg_acq_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         (void)vatomic32_xchg_acq(&g_shared, (vuint32_t)tid);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -566,7 +598,7 @@ mt_atomic_xchg_rel_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         (void)vatomic32_xchg_rel(&g_shared, (vuint32_t)tid);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -597,7 +629,7 @@ mt_atomic_xchg_rlx_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         (void)vatomic32_xchg_rlx(&g_shared, (vuint32_t)tid);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -628,7 +660,7 @@ mt_atomic_max_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_max(&g_shared, (vuint32_t)tid);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -643,7 +675,7 @@ mt_atomic_max(void)
         pthread_join(t[i], 0);
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == (N - 1));
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_max_rel
@@ -655,7 +687,7 @@ mt_atomic_max_rel_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_max_rel(&g_shared, (vuint32_t)tid);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -670,7 +702,7 @@ mt_atomic_max_rel(void)
         pthread_join(t[i], 0);
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == (N - 1));
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_max_rlx
@@ -682,7 +714,7 @@ mt_atomic_max_rlx_run(void *args)
     for (vsize_t i = 0; i < IT; i++) {
         vatomic32_max_rlx(&g_shared, (vuint32_t)tid);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -697,7 +729,7 @@ mt_atomic_max_rlx(void)
         pthread_join(t[i], 0);
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == (N - 1));
-    V_UNUSED(val);
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_and
@@ -712,7 +744,7 @@ mt_atomic_and_run(void *args)
         mask = mask << (i * tid);
         vatomic32_and(&g_shared, mask);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -736,7 +768,9 @@ mt_atomic_and(void)
     }
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_or
@@ -751,7 +785,7 @@ mt_atomic_or_run(void *args)
         mask = mask << (i * tid);
         vatomic32_or(&g_shared, mask);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -775,7 +809,9 @@ mt_atomic_or(void)
     }
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_xor
@@ -790,7 +826,7 @@ mt_atomic_xor_run(void *args)
         mask = mask << (i * tid);
         vatomic32_xor(&g_shared, mask);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -814,7 +850,9 @@ mt_atomic_xor(void)
     }
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_and_rel
@@ -829,7 +867,7 @@ mt_atomic_and_rel_run(void *args)
         mask = mask << (i * tid);
         vatomic32_and_rel(&g_shared, mask);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -853,7 +891,9 @@ mt_atomic_and_rel(void)
     }
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_or_rel
@@ -868,7 +908,7 @@ mt_atomic_or_rel_run(void *args)
         mask = mask << (i * tid);
         vatomic32_or_rel(&g_shared, mask);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -892,7 +932,9 @@ mt_atomic_or_rel(void)
     }
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_xor_rel
@@ -907,7 +949,7 @@ mt_atomic_xor_rel_run(void *args)
         mask = mask << (i * tid);
         vatomic32_xor_rel(&g_shared, mask);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -931,7 +973,9 @@ mt_atomic_xor_rel(void)
     }
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_and_rlx
@@ -946,7 +990,7 @@ mt_atomic_and_rlx_run(void *args)
         mask = mask << (i * tid);
         vatomic32_and_rlx(&g_shared, mask);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -970,7 +1014,9 @@ mt_atomic_and_rlx(void)
     }
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_or_rlx
@@ -985,7 +1031,7 @@ mt_atomic_or_rlx_run(void *args)
         mask = mask << (i * tid);
         vatomic32_or_rlx(&g_shared, mask);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -1009,7 +1055,9 @@ mt_atomic_or_rlx(void)
     }
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * MultiThreadedTest: vatomic32_xor_rlx
@@ -1024,7 +1072,7 @@ mt_atomic_xor_rlx_run(void *args)
         mask = mask << (i * tid);
         vatomic32_xor_rlx(&g_shared, mask);
     }
-    V_UNUSED(tid);
+    (void)(tid);
     return NULL;
 }
 static inline void
@@ -1048,7 +1096,9 @@ mt_atomic_xor_rlx(void)
     }
     vuint32_t val = vatomic32_read(&g_shared);
     assert(val == expected);
-    V_UNUSED(expected, val);
+    (void)(expected);
+    ;
+    (void)(val);
 }
 /*****************************************************************************
  * Entry point

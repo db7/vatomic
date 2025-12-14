@@ -42,10 +42,7 @@
  * @def VATOMIC_INIT(v)
  * @brief Initializes an atomic variable with value v.
  ******************************************************************************/
-#define VATOMIC_INIT(v)                                                        \
-    {                                                                          \
-        ._v = v                                                                \
-    }
+#define VATOMIC_INIT(v) {._v = v}
 
 /*******************************************************************************
  * @def vatomicptr(T)
