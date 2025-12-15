@@ -5,7 +5,7 @@ This project partially comply with [Semantic Versioning][].
 
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
 
-## Unreleased
+## [2.4.0]
 
 - Introduced vsync::atomic for C++ (vsync/atomic.hpp)
 - Added new verification pipeline in `verify/`
